@@ -14,7 +14,8 @@ The following is a list of multi-arch (`amd64`, `arm64`, `armv7`) tags for each 
 
 | Distro | Base Image | Rebased Image |
 | ------ | ---------- | ------------- |
-| Ubuntu | `ubuntu:latest`<br>`ubuntu:20.04` | `mbentley/ubuntu:latest`<br>`mbentley/ubuntu:20.04` |
+| Ubuntu | `ubuntu:latest`<br>`ubuntu:22.04` | `mbentley/ubuntu:latest`<br>`mbentley/ubuntu:22.04` |
+| Ubuntu | `ubuntu:20.04` | `mbentley/ubuntu:20.04` |
 | Ubuntu | `ubuntu:18.04` | `mbentley/ubuntu:18.04` |
 | Ubuntu | `ubuntu:16.04` | `mbentley/ubuntu:16.04` |
 
@@ -23,7 +24,7 @@ The following is a list of multi-arch (`amd64`, `arm64`, `armv7`) tags for each 
 ### Ubuntu
 
 ``` bash
-for VERSION in 20.04 18.04 16.04
+for VERSION in 22.04 20.04 18.04 16.04
 do
   docker build --pull --build-arg IMAGE_TAG="${VERSION}" -t "mbentley/ubuntu:${VERSION}" -f Dockerfile.ubuntu .
 done
