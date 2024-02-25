@@ -1,0 +1,11 @@
+# add the openj9 source image (https://hub.docker.com/_/ibm-semeru-runtimes) for ubuntu 20.04 (focal)
+FROM ibm-semeru-runtimes:open-17-jre-focal AS openj9
+FROM mbentley/ubuntu:20.04
+
+# grab openj9 + the shareclassescache and copy it to the destination image
+COPY --from=openj9 /opt/java/ /opt/java/
+
+# set default environment variables
+ENV JAVA_HOME="/opt/java/openjdk" \
+  PATH="/opt/java/openjdk/bin:$PATH" \
+  JAVA_TOOL_OPTIONS="-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal"
