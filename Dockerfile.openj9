@@ -8,4 +8,4 @@ COPY --from=openj9 /opt/java/ /opt/java/
 # set default environment variables
 ENV JAVA_HOME="/opt/java/openjdk" \
   PATH="/opt/java/openjdk/bin:$PATH" \
-  JAVA_TOOL_OPTIONS="-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal"
+  JAVA_TOOL_OPTIONS="-XX:+IgnoreUnrecognizedVMOptions -XX:+PortableSharedCache -XX:+IdleTuningGcOnIdle -Xshareclasses:name=openj9_system_scc,cacheDir=/opt/java/.scc,readonly,nonFatal -Xtune:virtualized"
