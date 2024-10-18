@@ -1,5 +1,5 @@
 # STAGE 0: use base image from Docker Hub and upgrade the existing packages
-ARG IMAGE_TAG="${IMAGE_TAG:-22.04}"
+ARG IMAGE_TAG="${IMAGE_TAG:-24.04}"
 FROM ubuntu:${IMAGE_TAG} AS base
 
 RUN apt-get update &&\
