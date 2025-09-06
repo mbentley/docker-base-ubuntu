@@ -4,4 +4,5 @@ This is an image for OpenJ9 (OpenJDK and Eclipse OpenJ9 binaries) for Ubuntu 20.
 
 | Base Image | OpenJ9 Source | Final Image |
 | ---------- | ------------- | ----------- |
-| `mbentley/ubuntu:20.04` | `ibm-semeru-runtimes:open-17-jre-focal` | `mbentley/openj9:17` |
+| `mbentley/ubuntu:24.04` | `ibm-semeru-runtimes:open-17-jre-noble` | `mbentley/openj9:17-noble` |
+| `mbentley/ubuntu:20.04` | `ibm-semeru-runtimes:open-17-jre-focal` | `mbentley/openj9:17-focal` |

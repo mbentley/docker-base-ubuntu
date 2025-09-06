@@ -1,6 +1,8 @@
-# add the openj9 source image (https://hub.docker.com/_/ibm-semeru-runtimes) for ubuntu 20.04 (focal)
-FROM ibm-semeru-runtimes:open-17-jre-focal AS openj9
-FROM mbentley/ubuntu:20.04
+# add the openj9 source image (https://hub.docker.com/_/ibm-semeru-runtimes)
+ARG OPENJ9_TAG="${OPENJ9_TAG:-open-17-jre-noble}"
+ARG IMAGE_TAG="${IMAGE_TAG:-24.04}"
+FROM ibm-semeru-runtimes:${OPENJ9_TAG} AS openj9
+FROM mbentley/ubuntu:${IMAGE_TAG}
 
 # grab openj9 + the shareclassescache and copy it to the destination image
 COPY --from=openj9 /opt/java/ /opt/java/
